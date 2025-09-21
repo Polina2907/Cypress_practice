@@ -16,5 +16,6 @@ describe("Look for a file in repository", () => {
         repositoryPage.expanderIcon().eq(2).click();
         repositoryPage.iconFolder().contains('doc').click();
         repositoryPage.iconFile().contains('README').click();
+        repositoryPage.breadCrumbs().contains('README');
     });
 });

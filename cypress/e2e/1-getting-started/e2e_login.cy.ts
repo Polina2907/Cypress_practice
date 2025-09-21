@@ -9,10 +9,9 @@ describe("Login test", () => {
 
   it("Log in successfully", () => {
    
-    cy.url().should('include', '/my/page');
-    cy.contains('Моя сторінка');
-
-    cy.get('.logout').click();
+    tabsPage.checkUrl('/my/page');
+    tabsPage.verifyMyPageText();
+    tabsPage.logout();
   });
 });
 
@@ -27,38 +26,38 @@ describe("Tabs check", () => {
     tabsPage.homeBtn().click();
     // Перегляд
     tabsPage.overviewBtn().click();
-    cy.url().should('include', '/projects/redmine');
+    tabsPage.checkUrl('/projects/redmine');
 
     // Download
     tabsPage.donwloadBtn().click();
-    cy.url().should('include', '/wiki/Download');
+    tabsPage.checkUrl('/wiki/Download');
 
     // Activity
     tabsPage.activityBtn().click();
-    cy.url().should('include', '/activity');
+    tabsPage.checkUrl('/activity');
 
     // Roadmap
     tabsPage.roadmapBtn().click();
-    cy.url().should('include', '/roadmap');
+    tabsPage.checkUrl('/roadmap');
 
     // Issues
     tabsPage.issuesBtn().click();
-    cy.url().should('include', '/issues');
+    tabsPage.checkUrl('/issues');
 
     // News
     tabsPage.newsBtn().click();
-    cy.url().should('include', '/news');
+    tabsPage.checkUrl('/news');
 
     // Wiki
     tabsPage.wikiBtn().click();
-    cy.url().should('include', '/wiki');
+    tabsPage.checkUrl('/wiki');
 
     // Boards
     tabsPage.boardsBtn().click();
-    cy.url().should('include', '/boards');
+    tabsPage.checkUrl('/boards');
 
     // Repository
     tabsPage.repositoryBtn().click();
-    cy.url().should('include', '/repository');
+    tabsPage.checkUrl('/repository');
     });
 });

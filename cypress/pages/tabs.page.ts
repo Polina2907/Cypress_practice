@@ -1,4 +1,6 @@
-class Tabs {
+import { Common } from "../helpers/common.helper";
+
+class Tabs extends Common{
     homeBtn = () => cy.get('.home');
     overviewBtn = () => cy.get('.overview');
     donwloadBtn = () => cy.get('.download');
@@ -9,6 +11,14 @@ class Tabs {
     wikiBtn = () => cy.get('.wiki').contains('Wiki');
     boardsBtn = () => cy.get('.boards');
     repositoryBtn = () => cy.get('.repository');
+
+    verifyMyPageText() {
+        this.verifyContainsText("Моя сторінка");
+    };
+
+    logout() {
+        this.clickLogout();
+    };
 }
 
 export default new Tabs();

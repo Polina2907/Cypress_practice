@@ -1,0 +1,1 @@
+export const successfulMsg = "Обліковий запис успішно оновлений."

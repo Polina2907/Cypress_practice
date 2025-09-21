@@ -3,6 +3,7 @@ class Repository {
     expanderIcon = () => cy.get('.expander');
     iconFolder = () => cy.get('.icon-folder');
     iconFile = () => cy.get('.icon-file');
+    breadCrumbs = () => cy.get('.breadcrumbs');
 }
 
 export default new Repository;
