@@ -21,7 +21,9 @@ jobs:
     - name: Install dependencies
     - run: npm install
     - run: npm run tests
-
+    - env:
+          CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
+          CYPRESS_PSWD: ${{ secrets.CYPRESS_PSWD }}
     - name: Upload Cypress screenshots
     - if: failure()
     - uses: actions/upload-artifact@v4
